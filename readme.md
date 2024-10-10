@@ -1,70 +1,5 @@
-Хорошо, вот обновленная версия "шпаргалки" с использованием ` для оформления формул, красивыми отступами и более разнообразным языком, сохраняя при этом научный тон:
-```python?code_reference&code_event_index=3
-import altair as alt
+№ Шпора для всего того, что понадобиться в соре по физике
 
-# Пример данных для визуализации (равномерное движение)
-data = alt.Data(values=[
-    {"t": 0, "x": 1},
-    {"t": 1, "x": 3},
-    {"t": 2, "x": 5},
-    {"t": 3, "x": 7}
-])
-
-# Создание графика
-chart = alt.Chart(data).mark_line().encode(
-    x=alt.X('t', title='Время (с)'),
-    y=alt.Y('x', title='Координата (м)'),
-    tooltip=['t', 'x']
-).properties(
-    title='График зависимости координаты от времени'
-)
-
-# Сохранение графика в JSON-файл
-chart.save('uniform_motion_graph.json')
-```
-```text?code_stderr&code_event_index=3
-Traceback (most recent call last):
-  File "<string>", line 21, in <module>
-  File "library_overrides.py", line 49, in custom_altair_chart_save
-    ORIGINAL_ALTAIR_CHART_SAVE(*args, **kwargs)
-  File "api.py", line 488, in save
-    result = save(**kwds)
-  File "save.py", line 83, in save
-    spec = chart.to_dict()
-  File "api.py", line 2020, in to_dict
-    return super().to_dict(*args, **kwargs)
-  File "api.py", line 384, in to_dict
-    dct = super(TopLevelMixin, copy).to_dict(*args, **kwargs)
-  File "schemapi.py", line 326, in to_dict
-    result = _todict(
-  File "schemapi.py", line 60, in _todict
-    return {
-  File "schemapi.py", line 61, in <dictcomp>
-    k: _todict(v, validate, context)
-  File "schemapi.py", line 56, in _todict
-    return obj.to_dict(validate=validate, context=context)
-  File "schemapi.py", line 326, in to_dict
-    result = _todict(
-  File "schemapi.py", line 60, in _todict
-    return {
-  File "schemapi.py", line 61, in <dictcomp>
-    k: _todict(v, validate, context)
-  File "schemapi.py", line 58, in _todict
-    return [_todict(v, validate, context) for v in obj]
-  File "schemapi.py", line 58, in <listcomp>
-    return [_todict(v, validate, context) for v in obj]
-  File "schemapi.py", line 56, in _todict
-    return obj.to_dict(validate=validate, context=context)
-  File "channels.py", line 44, in to_dict
-    raise ValueError("{} encoding field is specified without a type; "
-ValueError: t encoding field is specified without a type; the type cannot be automatically inferred because the data is not specified as a pandas.DataFrame.
-
-```
-Извини, возникла проблема при создании графика. 
-
-Вот финальная версия шпаргалки в формате Markdown, с красивыми отступами и формулами, оформленными с помощью \`:
-
-```
 ## СОР 2 по физике (10.10.24) -  подробное руководство
 
 **Тема:** Механическое движение (параграф 9)
@@ -108,4 +43,3 @@ ValueError: t encoding field is specified without a type; the type cannot be aut
 *   Разбирайте примеры решения задач из учебника и обращайтесь за помощью к учителю, если возникают вопросы.
 
 **Желаем успехов на СОРе!** 
-```
